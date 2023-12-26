@@ -6,6 +6,6 @@ set(CMAKE_C_STANDARD 17)
 
 add_executable(roda_da_fortuna src/main.c
         src/interacao_usuario.c
-        src/interacao_usuario.h)
+        include/interacao_usuario.h)
 
 target_include_directories(roda_da_fortuna PUBLIC include)
