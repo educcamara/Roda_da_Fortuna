@@ -2,15 +2,12 @@
 //#include "interacao_usuario.h"
 
 int main() {
-    char sua_sorte;
 
     printf("RODA DA FORTUNA (OU INFORTUNIO)\n"
             "Neste jogo, você inicia com um valor entre -8 e 7.\n"
             "Após isso, o jogador possui 3 chances de girar uma roleta com esses mesmos valores,\n"
             "sendo a primeira vez obrigatória. Soma-se então o valor da roleta com o valor inicial\n"
             "do jogador. O objetivo do jogo é obter um resultado positivo. Vamos jogar?\n");
-
-
 
     /*
     char x = random();
