@@ -5,18 +5,14 @@ char numero_aleatorio() {
     return (char) ((rand() % 16) - 8);
 }
 
-void roda_da_fortuna(char *x) {
-    char sua_sorte = numero_aleatorio();
-    *x += sua_sorte;
-    if (*x < -8) {
-        *x += 16;
-    } else if (*x > 7) {
-        *x -= 16;
+char roda_da_fortuna(char sua_sorte) {
+    char fortuna_infortunio = numero_aleatorio();
+    fortuna_infortunio += sua_sorte;
+    if (fortuna_infortunio < -8) {
+        fortuna_infortunio += 16;
+    } else if (fortuna_infortunio > 7) {
+        fortuna_infortunio -= 16;
     }
-}
 
-/*
- * 0b1001 1101
- * & 0b0000 1111
- * = 0b0000 1101
- */
+    return fortuna_infortunio;
+}

@@ -1,43 +1,37 @@
 #include <stdio.h>
-//#include "interacao_usuario.h"
+#include "funcoes_roda.h"
+#include "interacao_usuario.h"
 
 int main() {
+    imprime_instrucoes();
 
-    printf("RODA DA FORTUNA (OU INFORTUNIO)\n"
-            "Neste jogo, você inicia com um valor entre -8 e 7.\n"
-            "Após isso, o jogador possui 3 chances de girar uma roleta com esses mesmos valores,\n"
-            "sendo a primeira vez obrigatória. Soma-se então o valor da roleta com o valor inicial\n"
-            "do jogador. O objetivo do jogo é obter um resultado positivo. Vamos jogar?\n");
+    printf("Vamos jogar?(s/n)\n");
 
-    /*
-    char x = random();
-
-    printf(Esse eh seu valor inicial: x);
-
-    printf(Gire a roleta!);
-    roda_da_fortuna(&x);
-
-    printf(Esse eh seu valor: x);
-    char tentativas = 0;
-    char continuar = 1;
-    while (x < 3 && continuar) {
-        printf(Deseja continuar?);
-        scanf(%c%*c, &continuar);
-        if (continuar == 's') {
-            printf(Gire a roleta!);
-            roda_da_fortuna(&x);
-            printf(Esse eh seu valor: x);
-        } else {
-            printf(Ok, tchau!);
-            continuar = 0;
-        }
-        tentativas++;
+    if (!checar_input()) {
+        return 0;
     }
+    char sua_sorte = numero_aleatorio();
 
-     0 = 90 (mod 90)
-     0 = -90 (mod 90)
-     (-8 -7) % 16 = 1
-    */
+    printf("Esse eh seu valor inicial: %hhd\n", sua_sorte);
+
+    printf("\nGira roleta gira!!\n\n");
+    char fortuna_infortunio = roda_da_fortuna(sua_sorte);
+
+    printf("Esse é seu resultado: %hhd\n", fortuna_infortunio);
+    printf("Deseja continuar?(s/n)\n");
+    char tentativas = 3;
+    while (tentativas > 0 && checar_input()) {
+        printf("Você tem %hhd tentativa(s) restante(s)\n", tentativas);
+        fortuna_infortunio = roda_da_fortuna(fortuna_infortunio);
+        imprime_resultado(fortuna_infortunio);
+
+        if (tentativas != 1) {
+            printf("Deseja continuar?(s/n)\n");
+        }
+        tentativas--;
+    }
+    printf("Obrigado por jogar!\n");
+
     return 0;
 }
 

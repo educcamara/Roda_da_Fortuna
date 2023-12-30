@@ -1,7 +1,3 @@
-//
-// Created by Eduardo Cordeiro da Camara on 12/27/23.
-//
-
 #ifndef RODA_DA_FORTUNA_FUNCOES_RODA_H
 #define RODA_DA_FORTUNA_FUNCOES_RODA_H
 
@@ -10,6 +6,6 @@
 #include <time.h>
 
 char numero_aleatorio();
-void roda_da_fortuna(char *x);
+char roda_da_fortuna(char sua_sorte);
 
 #endif //RODA_DA_FORTUNA_FUNCOES_RODA_H
