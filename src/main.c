@@ -19,15 +19,18 @@ int main() {
     char fortuna_infortunio = roda_da_fortuna(sua_sorte);
 
     printf("Esse é seu resultado: %hhd\n", fortuna_infortunio);
-    printf("Deseja continuar?(s/n)\n");
+
     char tentativas = 3;
+    printf("Você tem %hhd tentativa(s) restante(s)\n", tentativas);
+    printf("Deseja continuar?(s/n)\n");
+
     // Enquanto tiver tentativas e o usuário quiser continuar, o programa continua
     while (tentativas > 0 && checar_input()) {
-        printf("Você tem %hhd tentativa(s) restante(s)\n", tentativas);
         fortuna_infortunio = roda_da_fortuna(sua_sorte);
         imprime_resultado(fortuna_infortunio);
 
         tentativas--;
+        printf("Você tem %hhd tentativa(s) restante(s)\n", tentativas);
         // Enquanto tiver tentativas, o programa pergunta ao usuário se quer continuar
         if (tentativas > 0) {
             printf("Deseja continuar?(s/n)\n");
