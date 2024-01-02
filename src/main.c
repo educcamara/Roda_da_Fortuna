@@ -17,8 +17,10 @@ int main() {
 
     printf("\nGira roleta gira!!\n\n");
     char fortuna_infortunio = roda_da_fortuna(sua_sorte);
+    //variável de retorno do jogo
 
     printf("Esse é seu resultado: %hhd\n", fortuna_infortunio);
+    imprime_resultado(fortuna_infortunio);
 
     char tentativas = 3;
     printf("Você tem %hhd tentativa(s) restante(s)\n", tentativas);
@@ -31,12 +33,13 @@ int main() {
 
         tentativas--;
         printf("Você tem %hhd tentativa(s) restante(s)\n", tentativas);
+
         // Enquanto tiver tentativas, o programa pergunta ao usuário se quer continuar
         if (tentativas > 0) {
             printf("Deseja continuar?(s/n)\n");
         }
     }
-    printf("Obrigado por jogar!\n");
+    printf("\nSeu valor final é %hhd.\nObrigado por jogar!\n", fortuna_infortunio);
 
     return 0;
 }
