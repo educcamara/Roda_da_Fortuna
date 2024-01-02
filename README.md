@@ -3,11 +3,6 @@
 Esse é o diretório da Atividade 2 de Sistemas Lógicos 2023/2. Esse projeto é feito pela dupla 
 Eduardo Cordeiro da Camara e André Yudji Silva Okimoto.
 
-## Índice
-
-- [Complemento de 2](#complemento-de-2)
-- [Sobre o Jogo](#sobre-o-jogo)
-
 ## Complemento de 2
 
 Nesse trabalho, foi praticado o conceito de *complemento de 2*. Essa representação de números é utilizada
